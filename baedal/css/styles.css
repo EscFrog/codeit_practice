@@ -1,3 +1,81 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "BMJUA";
+	src: url(../fonts/BMJUA_otf.otf);
+}
+
+body {
+	background-color: #f0e8d9;
+	font-family: "BMJUA";
+	font-size: 16px;
+	color: #58595b;
+}
+
+h1 {
+	font-size: 64px;
+	margin: 0px;
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-size: 32px;
+	margin: 0px;
+}
+
+.title-row {
+	text-align: center;
+	margin: 75px 0px;
+}
+
+.box p {
+	margin-top: 20px;
+	margin-bottom: 16px;
+	text-align: left;
+}
+
+.box a {
+	color: #0000ee;
+	text-decoration: none;
+}
+
+.box-row {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.box {
+	display: inline-block;
+	background-color: white;
+	border-radius: 10px;
+	width: 300px;
+	overflow: hidden;
+}
+
+.box__photo {
+	height: 200px;
+	width: 100%;
+	background-size: cover;
+}
+
+.box__contents {
+	padding: 20px;
+}
+
+.chicken-box .box__photo {
+	background-image: url("../images/chicken.jpg");
+}
+
+.sushi-box .box__photo {
+	background-image: url("../images/sushi.jpg");
+}
+
+.burger-box .box__photo {
+	background-image: url("../images/burger.jpg");
+}
+
+.bibimbap-box .box__photo {
+	background-image: url("../images/bibimbap.jpg");
 }
