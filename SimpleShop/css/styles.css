@@ -9,9 +9,220 @@ body {
 }
 
 /* navbar */
+#navbar {
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: white;
+}
 
-/* hero header */
+#logo {
+  float: left;
+  line-height: 60px;
+  padding-left: 30px;
+}
+
+#logo img {
+  vertical-align: middle;
+}
+
+#navbar .links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 30px;
+  float: right;
+}
+
+#navbar .links li {
+  float: left;
+  margin-left: 30px;
+}
+
+#navbar .links li a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: #545454;
+  display: block;
+  line-height: 60px;
+}
+
+/* hero-header */
+#hero-header {
+  margin-top: 60px;
+}
+
+#hero-header .header-image {
+  background-image: url("../images/hero_header.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+}
+#hero-header .header-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
 /* products */
+#products {
+  width: 715px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#products .product-box {
+  float: left;
+  text-decoration: none;
+  color: #545454;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+#products .product-box:nth-child(3n+2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#products .product-box .image{
+  height: 225px;
+  width: 225px; 
+  background-size: cover;
+  background-position: center center;
+}
+
+#products .product-box .name{
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+/* product 1 */
+#products .product-box:nth-child(1) .image{
+  background-image: url("../images/sunglasses.jpg");
+}
+#products .product-box:nth-child(1) .name::after{
+  content: "Sunglasses";
+}
+#products .product-box:nth-child(1) .price::after{
+  content: "49,000";
+}
+
+/* product 2 */
+#products .product-box:nth-child(2) .image{
+  background-image: url("../images/tassel_loafer.jpg");
+}
+#products .product-box:nth-child(2) .name::after{
+  content: "Tassel Loafer";
+}
+#products .product-box:nth-child(2) .price::after{
+  content: "89,000";
+}
+
+/* product 3 */
+#products .product-box:nth-child(3) .image{
+  background-image: url("../images/beige_bag.jpg");
+}
+#products .product-box:nth-child(3) .name::after{
+  content: "Beige Bag";
+}
+#products .product-box:nth-child(3) .price::after{
+  content: "69,000";
+}
+
+/* product 4 */
+#products .product-box:nth-child(4) .image{
+  background-image: url("../images/sneakers.jpg");
+}
+#products .product-box:nth-child(4) .name::after{
+  content: "Sneakers";
+}
+#products .product-box:nth-child(4) .price::after{
+  content: "79,000";
+}
+
+/* product 5 */
+#products .product-box:nth-child(5) .image{
+  background-image: url("../images/slippers.jpg");
+}
+#products .product-box:nth-child(5) .name::after{
+  content: "Slippers";
+}
+#products .product-box:nth-child(5) .price::after{
+  content: "29,000";
+}
+
+/* product 6 */
+#products .product-box:nth-child(6) .image{
+  background-image: url("../images/wrist_watch.jpg");
+}
+#products .product-box:nth-child(6) .name::after{
+  content: "Wrist Watch";
+}
+#products .product-box:nth-child(6) .price::after{
+  content: "99,000";
+}
+
+/* product 7 */
+#products .product-box:nth-child(7) .image{
+  background-image: url("../images/fedora_hat.jpg");
+}
+#products .product-box:nth-child(7) .name::after{
+  content: "Fedora Hat";
+}
+#products .product-box:nth-child(7) .price::after{
+  content: "39,000";
+}
+
+/* product 8 */
+#products .product-box:nth-child(8) .image{
+  background-image: url("../images/classic_loafer.jpg");
+}
+#products .product-box:nth-child(8) .name::after{
+  content: "Classic Loafer";
+}
+#products .product-box:nth-child(8) .price::after{
+  content: "99,000";
+}
+
+/* product 9 */
+#products .product-box:nth-child(9) .image{
+  background-image: url("../images/pink_bag.jpg");
+}
+#products .product-box:nth-child(9) .name::after{
+  content: "Pink Bag";
+}
+#products .product-box:nth-child(9) .price::after{
+  content: "79,000";
+}
 
 /* footer */
+#footer {
+  clear: left;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+#footer .links {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footer .links a {
+  text-decoration: none;
+}
+
+#footer .links img {
+  height: 20px;
+}
+
+#footer .links a:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
