@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Launchpad</title>
+    <meta charset="utf-8" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="pad">
+      <img src="images/pad.png" width="700" height="570">
+      <button id="play-btn">
+        <img src="images/play.png" width="50" height="50">
+      </button>
+      <button id="stop-btn">
+        <img src="images/stop.png" width="50" height="50">
+      </button>
+
+      <div class="cell-container">
+        <div class="cell green" id="cell1">
+          <div class="key">1</div>
+          <div class="instrument">Kick</div>
+        </div>
+
+        <div class="cell blue" id="cell2">
+          <div class="key">2</div>
+          <div class="instrument">Closed<br>Hi-hat</div>
+        </div>
+
+        <div class="cell blue" id="cell3">
+          <div class="key">3</div>
+          <div class="instrument">Open<br>Hi-hat</div>
+        </div>
+
+        <div class="cell red" id="cell4">
+          <div class="key">4</div>
+          <div class="instrument">Clap</div>
+        </div>
+
+        <div class="cell red" id="cell5">
+          <div class="key">5</div>
+          <div class="instrument">Snap</div>
+        </div>
+
+        <div class="cell blue" id="cell6">
+          <div class="key">6</div>
+          <div class="instrument">Crash</div>
+        </div>
+
+        <div class="cell green" id="cell7">
+          <div class="key">7</div>
+          <div class="instrument">Tom 1</div>
+        </div>
+
+        <div class="cell green" id="cell8">
+          <div class="key">8</div>
+          <div class="instrument">Tom 2</div>
+        </div>
+
+        <div class="cell blue" id="cell9">
+          <div class="key">9</div>
+          <div class="instrument">Tambourine</div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script>
+      let loopSound = new Audio('audio/loop.mp3');
+      
+      $('#play-btn').on('click', loopPlay);
+      $('#stop-btn').on('click', loopStop);
+
+      $(document).on('keydown', keyDownHandler);
+      $(document).on('keyup', removePlayingTag);
+
+      $('#cell1').on('mousedown', play_kick_drum);
+      $('#cell1').on('mouseup', removePlayingTag);
+      
+      $('#cell2').on('mousedown', play_closed_hihat);
+      $('#cell2').on('mouseup', removePlayingTag);
+
+      $('#cell3').on('mousedown', play_open_hihat);
+      $('#cell3').on('mouseup', removePlayingTag);
+
+      $('#cell4').on('mousedown', play_clap);
+      $('#cell4').on('mouseup', removePlayingTag);
+
+      $('#cell5').on('mousedown', play_snap);
+      $('#cell5').on('mouseup', removePlayingTag);
+
+      $('#cell6').on('mousedown', play_crash);
+      $('#cell6').on('mouseup', removePlayingTag);
+
+      $('#cell7').on('mousedown', play_tom1);
+      $('#cell7').on('mouseup', removePlayingTag);
+
+      $('#cell8').on('mousedown', play_tom2);
+      $('#cell8').on('mouseup', removePlayingTag);
+
+      $('#cell9').on('mousedown', play_tambourine);
+      $('#cell9').on('mouseup', removePlayingTag);
+
+      function loopPlay() {
+        loopSound.play();
+      }
+
+      function loopStop() {
+        loopSound.pause();
+        loopSound.currentTime = 0;
+      }
+
+      function keyDownHandler(event) {
+        switch(event.key) {
+          case '1':
+            play_kick_drum();
+            break;
+          case '2':
+            play_closed_hihat();
+            break;
+          case '3':
+            play_open_hihat();
+            break;
+          case '4':
+            play_clap();
+            break;
+          case '5':
+            play_snap();
+            break;
+          case '6':
+            play_crash();
+            break;
+          case '7':
+            play_tom1();
+            break;
+          case '8':
+            play_tom2();
+            break;
+          case '9':
+            play_tambourine();
+            break;
+          default:
+            // console.log('other key down');
+        }
+      }
+
+      function play_kick_drum(event) {
+        $('#cell1').addClass('playing');
+        let kick_drum = new Audio("audio/01_kick_drum.wav");
+        kick_drum.play();
+      }
+      function play_closed_hihat() {
+        $('#cell2').addClass('playing');
+        let closed_hihat = new Audio("audio/02_closed_hihat.wav");
+        closed_hihat.play();
+      }
+      function play_open_hihat() {
+        $('#cell3').addClass('playing');
+        let open_hihat = new Audio("audio/03_open_hihat.wav");
+        open_hihat.play();
+      }
+      function play_clap() {
+        $('#cell4').addClass('playing');
+        let clap = new Audio("audio/04_clap.wav");
+        clap.play();
+      }
+      function play_snap() {
+        $('#cell5').addClass('playing');
+        let snap = new Audio("audio/05_snap.wav");
+        snap.play();
+      }
+      function play_crash() {
+        $('#cell6').addClass('playing');
+        let crash = new Audio("audio/06_crash.wav");
+        crash.play();
+      }
+      function play_tom1() {
+        $('#cell7').addClass('playing');
+        let tom1 = new Audio("audio/07_tom1.wav");
+        tom1.play();
+      }
+      function play_tom2() {
+        $('#cell8').addClass('playing');
+        let tom2 = new Audio("audio/08_tom2.wav");
+        tom2.play();
+      }
+      function play_tambourine() {
+        $('#cell9').addClass('playing');
+        let tambourine = new Audio("audio/09_tambourine.wav");
+        tambourine.play();
+      }
+
+      function removePlayingTag() {
+        $('.cell').removeClass('playing');
+      }
+    </script>
+  </body>
+</html>
